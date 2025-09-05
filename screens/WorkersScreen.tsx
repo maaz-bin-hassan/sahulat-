@@ -10,17 +10,12 @@ import DynamicIconButton from '../components/DynamicIconButton';
 import JobFlowBar from '../components/JobFlowBar';
 import { useJobFlowStore } from '../store/jobFlowStore';
 
-// Constants for better maintainability
-const ANIMATION_DURATION = 6000; // 6 seconds
+const ANIMATION_DURATION = 5000;
 const BACK_ICON_SIZE = 24;
 
-/**
- * Props interface for WorkersScreen component
- */
+
 interface WorkersScreenProps {
-  /** Controls the visibility of the modal screen */
   visible: boolean;
-  /** Callback function called when the screen should be closed */
   onClose: () => void;
 }
 
@@ -62,7 +57,7 @@ const WorkersScreen: React.FC<WorkersScreenProps> = React.memo(({ visible, onClo
     uploadScreenTintColor: COLORS.textLight,
   }), []);
 
-  // Memoized back icon to prevent recreation on every render
+  // Memoized back icon to prevent recreation on every render.
   const backIcon = useMemo(() => (
     <Ionicons 
       name="chevron-back" 
